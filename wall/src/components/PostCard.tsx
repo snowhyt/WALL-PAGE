@@ -1,11 +1,10 @@
 import { Card } from "@/components/ui/card";
 import Image from "next/image"
-interface PostCardProps{
-author: string;
-content: string;
-image_url: string | null;
+interface PostCardProps {
+  author: string;
+  content: string;
+  image_url: string;
 }
-
 
 export function PostCard({ author, content, image_url }:PostCardProps) {
   return (
