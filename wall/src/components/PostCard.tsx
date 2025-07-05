@@ -3,7 +3,7 @@ import Image from "next/image"
 interface PostCardProps{
 author: string;
 content: string;
-image_url: string;
+image_url: string | null;
 }
 
 
@@ -14,7 +14,7 @@ export function PostCard({ author, content, image_url }:PostCardProps) {
        {image_url && (
         <div className="relative h-80 mb-4">
           <Image
-            src={image_url}
+            src={image_url as string}
             alt={`Post by ${author}`}
             fill
             className="rounded-md object-cover"
