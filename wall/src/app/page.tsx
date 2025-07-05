@@ -103,10 +103,11 @@ export default function Page() {
       setImageFile(null);
       setImagePreview(null);
       fetchPosts();
-    } catch (error: any) {
-      console.error("Error posting:", error);
-      alert(error.message);
-    } finally {
+    }  catch (error) {
+  const err = error as Error;
+  console.error("Error posting:", err);
+  alert(err.message);
+} finally {
       setLoading(false);
     }
   };
