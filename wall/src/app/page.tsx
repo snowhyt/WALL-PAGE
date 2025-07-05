@@ -13,7 +13,7 @@ type Post = {
   id?: string;
   author: string;
   content: string;
-  image_url: string;
+  image_url: string | null;
 };
 
 export default function Page() {
@@ -92,7 +92,7 @@ export default function Page() {
     const { error: insertError } = await supabase.from("posts").insert({
       author: "Oliver Glorioso",
       content: text,
-      image_url: image_url??"",
+      image_url: image_url,
     });
 
     if (insertError) {
