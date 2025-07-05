@@ -156,7 +156,7 @@ export default function Page() {
               key={p.id}
               author={p.author}
               content={p.content}
-              image_url={p.image_url}
+              image_url={p.image_url as string}
             />
           ))}
         </main>
